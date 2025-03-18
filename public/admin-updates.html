@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - OpenChat Updates</title>
+    <style>
+        body { background: #121212; color: white; font-family: Arial, sans-serif; text-align: center; }
+        textarea { width: 90%; height: 200px; background: #1e1e1e; color: cyan; border: none; padding: 10px; }
+        button { background: cyan; color: black; padding: 10px; border: none; cursor: pointer; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>🛠 Admin Panel - OpenChat Updates</h1>
+    <textarea id="updatesInput"></textarea>
+    <button onclick="saveUpdates()">Save Updates</button>
+
+    <script>
+        async function loadUpdates() {
+            const res = await fetch("http://localhost:3000/updates");
+            const updates = await res.json();
+            document.getElementById("updatesInput").value = JSON.stringify(updates, null, 2);
+        }
+
+        async function saveUpdates() {
+            const updates = JSON.parse(document.getElementById("updatesInput").value);
+            await fetch("http://localhost:3000/updates", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(updates)
+            });
+            alert("Updates saved!");
+        }
+
+        loadUpdates();
+    </script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support OpenChat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #15151e;
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --text-primary: #f8f8f8;
+      --text-secondary: #a0a0a0;
+      --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      --success-color: #10b981;
+      --error-color: #ef4444;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #0a0a0f 0%, #16162a 100%);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background-color: var(--bg-secondary);
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      margin: 2rem auto;
+      position: relative;
+    }
+    
+    .header {
+      padding: 2.5rem 2rem;
+      background: linear-gradient(45deg, #6366f1, #8b5cf6);
+      text-align: center;
+      position: relative;
+    }
+    
+    .header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #6366f1);
+      background-size: 200% 100%;
+      animation: gradientMove 4s infinite linear;
+    }
+    
+    @keyframes gradientMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+    }
+    
+    .content {
+      padding: 2rem;
+    }
+    
+    .section {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 24px;
+      background: linear-gradient(to bottom, var(--accent-color), var(--accent-hover));
+      border-radius: 4px;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+    
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    
+    a:hover {
+      color: var(--accent-hover);
+    }
+    
+    a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--accent-hover);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+      color: white;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+    }
+    
+    .btn:active {
+      transform: translateY(0);
+    }
+    
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    input[type="text"],
+    input[type="file"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+    
+    .file-input-wrapper {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      border: 2px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .file-input-wrapper:hover {
+      border-color: var(--accent-color);
+      background-color: rgba(99, 102, 241, 0.05);
+    }
+    
+    .file-input-wrapper input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    .file-input-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+    
+    .file-input-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    .file-name {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: var(--accent-color);
+      max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      position: relative;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+    
+    li::before {
+      content: "•";
+      color: var(--accent-color);
+      position: absolute;
+      left: -1.5rem;
+      font-weight: bold;
+    }
+    
+    .status-message {
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      display: none;
+    }
+    
+    .success {
+      background-color: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--success-color);
+    }
+    
+    .error {
+      background-color: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: var(--error-color);
+    }
+    
+    .animated {
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Animation delay for sections */
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.25s; }
+    .section:nth-child(3) { animation-delay: 0.4s; }
+    
+    /* Upload progress */
+    .upload-progress-container {
+      width: 100%;
+      height: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      margin-top: 1rem;
+      overflow: hidden;
+      display: none;
+    }
+    
+    .upload-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+      }
+      
+      .header {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .content {
+        padding: 1.5rem;
+      }
+      
+      .section {
+        padding: 1.25rem;
+      }
+    }
+    
+    .upload-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Support OpenChat</h1>
+      <div class="subtitle">Help us build a better communication platform for everyone</div>
+    </div>
+    
+    <div class="content">
+      <div class="section animated">
+        <h2>Donate</h2>
+        <p>Your support helps us keep OpenChat secure, private, and free for everyone. If you appreciate our work, please consider making a donation—every bit helps us continue improving the platform.</p>
+        <a href="https://www.gofundme.com/f/openchat-project" target="_blank" class="btn">Donate via GoFundMe</a>
+      </div>
+      
+      <div class="section animated">
+        <h2>Contribute to Development</h2>
+        <p>Join our community of developers and help make OpenChat even better! We're looking for creative minds to code a better UI, develop new functionalities, and translate our webpage into more languages.</p>
+        <p>Your contributions make a huge difference in shaping the future of OpenChat.</p>
+        <a href="https://github.com/openchat-project/openchat" target="_blank" class="btn">Contribute on GitHub</a>
+      </div>
+
+      <div class="section animated">
+        <h2>Help Us Translate OpenChat</h2>
+        <p>Join our diverse community in making OpenChat accessible to speakers of all languages. Languages are the heart and soul of our platform, connecting people worldwide. We need your help to translate OpenChat and spread the joy of communication to every corner of the globe!</p>
+        
+        <a href="translations/en.json" download class="btn" style="margin-bottom: 1.5rem;">Download Translation Template</a>
+        
+        <form id="translationForm">
+          <div class="form-group">
+            <label for="languageInput">Language you are translating to:</label>
+            <input type="text" id="languageInput" name="language" placeholder="E.g., French, Spanish, Japanese" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="fileInput">Upload your translated file:</label>
+            <div class="file-input-wrapper">
+              <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              <div class="file-input-text">Drag and drop your JSON file here or click to browse</div>
+              <input type="file" id="fileInput" name="file" accept=".json" required>
+              <div class="file-name" id="fileName"></div>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn" style="width: 100%;">Submit Translation</button>
+          
+          <div class="upload-progress-container" id="progressContainer">
+            <div class="upload-progress-bar" id="progressBar"></div>
+          </div>
+          
+          <div class="status-message success" id="successMessage">
+            Translation successfully uploaded! Thank you for your contribution.
+          </div>
+          
+          <div class="status-message error" id="errorMessage">
+            Error uploading translation. Please try again or contact support.
+          </div>
+        </form>
+        
+        <div style="margin-top: 1.5rem;">
+          <p style="font-weight: 500; color: var(--text-primary);">Translation Instructions:</p>
+          <ul>
+            <li>Translate the text in the template while keeping the essence of the original content.</li>
+            <li>Feel free to adapt jokes and cultural references to suit the target language.</li>
+            <li>Save the translated file as [language code].json (e.g., fr.json for French).</li>
+            <li>Be sure to maintain the same JSON structure as the original file.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // File upload preview
+    const fileInput = document.getElementById('fileInput');
+    const fileName = document.getElementById('fileName');
+    const progressContainer = document.getElementById('progressContainer');
+    const progressBar = document.getElementById('progressBar');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const translationForm = document.getElementById('translationForm');
+    
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length > 0) {
+        fileName.textContent = e.target.files[0].name;
+      }
+    });
+    
+    // Form submission
+    translationForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(translationForm);
+      const language = formData.get('language');
+      const file = formData.get('file');
+      
+      if (!language || !file) {
+        errorMessage.style.display = 'block';
+        successMessage.style.display = 'none';
+        return;
+      }
+      
+      // Show progress bar
+      progressContainer.style.display = 'block';
+      errorMessage.style.display = 'none';
+      successMessage.style.display = 'none';
+      
+      try {
+        const response = await uploadFile(formData);
+        
+        if (response.ok) {
+          successMessage.style.display = 'block';
+        } else {
+          errorMessage.style.display = 'block';
+        }
+      } catch (error) {
+        console.error('Error in upload:', error);
+        progressContainer.style.display = 'none';
+        errorMessage.style.display = 'block';
+      }
+    });
+    
+    async function uploadFile(formData) {
+  const response = await fetch('/upload-translation', {
+    method: 'POST',
+    body: formData
+  });
+  return response;
+}
+
+    
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = error => reject(error);
+      });
+    }
+    
+    // Add animation to sections
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section, index) => {
+        setTimeout(() => {
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
+        }, index * 150);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenChat Updates</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body { background: #121212; color: white; font-family: Arial, sans-serif; text-align: center; }
+        h1 { color: cyan; }
+        .update { background: #1e1e1e; margin: 10px auto; padding: 10px; border-radius: 8px; width: 80%; }
+    </style>
+</head>
+<body>
+    <h1>🔔 Latest OpenChat Updates</h1>
+    <div id="updates"></div>
+
+    <script>
+        async function fetchUpdates() {
+            const res = await fetch("http://localhost:3000/updates");
+            const updates = await res.json();
+            const updatesDiv = document.getElementById("updates");
+            updatesDiv.innerHTML = "";
+
+            updates.forEach((update, index) => {
+                const div = document.createElement("div");
+                div.className = "update";
+                div.innerHTML = `<h2>${update.title}</h2><p>${update.description}</p>`;
+                updatesDiv.appendChild(div);
+
+                anime({
+                    targets: div,
+                    opacity: [0, 1],
+                    translateY: [20, 0],
+                    easing: "easeOutQuad",
+                    delay: index * 300
+                });
+            });
+        }
+
+        fetchUpdates();
+        setInterval(fetchUpdates, 5000);
+    </script>
+</body>
+</html>

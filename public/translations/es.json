@@ -1,0 +1,108 @@
+{
+    "nav.features": "Características",
+    "nav.how_it_works": "Cómo Funciona",
+    "nav.get_started": "Comenzar",
+  
+    "hero.title": "Chat Seguro Sin Compromisos",
+    "hero.description": "OpenChat es una plataforma de mensajería segura con cifrado de extremo a extremo que prioriza la privacidad. No requiere número de teléfono, descentralizada por diseño y completamente de código abierto.",
+    "hero.button.get_started": "Comenzar",
+    "hero.button.learn_more": "Saber Más",
+  
+    "features.section_title": "¿Por Qué Elegir OpenChat?",
+    "features.section_description": "Experimenta el futuro de la mensajería segura con características diseñadas para proteger tu privacidad y mejorar tu comunicación.",
+  
+    "features.e2ee.title": "Cifrado de Extremo a Extremo",
+    "features.e2ee.description": "Todos los mensajes están cifrados con protocolos E2EE de última generación, asegurando que solo tú y tu destinatario puedan leerlos.",
+  
+    "features.no_phone.title": "No Requiere Número de Teléfono",
+    "features.no_phone.description": "Regístrate sin compartir tu número de teléfono, preservando tu privacidad y haciéndolo accesible para todos.",
+  
+    "features.decentralized.title": "Arquitectura Descentralizada",
+    "features.decentralized.description": "Basado en bases de datos interconectadas alojadas por usuarios en la nube, creando una red resistente que no puede ser fácilmente derribada.",
+  
+    "features.open_source.title": "Código Abierto",
+    "features.open_source.description": "Código completamente transparente que cualquiera puede inspeccionar, modificar y contribuir, asegurando que no haya puertas traseras ocultas.",
+  
+    "features.european.title": "Diseño Europeo",
+    "features.european.description": "OpenChat está 100% hecho en Europa. Construido con valores europeos de privacidad en su núcleo. OpenChat cumple con GDPR y pone la soberanía del usuario en primer lugar — ¡sin vigilancia de Silicon Valley!",
+  
+    "how_it_works.section_title": "Cómo Funciona OpenChat",
+    "how_it_works.section_description": "Entendiendo la tecnología detrás de la plataforma de mensajería segura y descentralizada de OpenChat.",
+  
+    "how_it_works.step1.title": "Red de Bases de Datos Descentralizada",
+    "how_it_works.step1.description": "OpenChat conecta bases de datos distribuidas alojadas por usuarios en la nube. A diferencia de las aplicaciones de mensajería tradicionales que dependen de servidores centralizados, OpenChat crea una red de nodos interconectados, cada uno almacenando datos cifrados. Esto significa que no hay un único punto de fallo y ninguna autoridad central monitoreando tus conversaciones.",
+  
+    "how_it_works.step2.title": "Cifrado de Extremo a Extremo",
+    "how_it_works.step2.description": "Todos los mensajes enviados a través de OpenChat son cifrados en tu dispositivo antes de salir, y solo pueden ser descifrados por el destinatario previsto. Incluso si alguien interceptara los datos en tránsito o accediera a las bases de datos donde se almacenan los mensajes, solo verían datos cifrados imposibles de leer sin las claves adecuadas.",
+  
+    "how_it_works.step3.title": "Identidad Sin Números de Teléfono",
+    "how_it_works.step3.description": "A diferencia de otras aplicaciones de mensajería, OpenChat no requiere un número de teléfono para crear una cuenta. Esto protege tu privacidad y hace que el servicio sea accesible para cualquier persona con conexión a Internet, tenga o no un teléfono móvil. Los usuarios pueden crear identidades seguras utilizando claves criptográficas.",
+  
+    "how_it_works.step4.title": "Desarrollo de Código Abierto",
+    "how_it_works.step4.description": "El código de OpenChat es completamente de código abierto, lo que significa que cualquiera puede inspeccionarlo, verificar su seguridad y contribuir con mejoras. Este enfoque colaborativo asegura que la plataforma permanezca segura, actualizada y libre de vulnerabilidades ocultas o puertas traseras que podrían comprometer la privacidad del usuario.",
+  
+    "cta.section_title": "¿Listo para Comenzar?",
+    "cta.section_description": "Únete a la revolución de la mensajería segura hoy. Despliega tu propia instancia de OpenChat o aprende más sobre cómo funciona.",
+    "cta.button.deploy": "Desplegar con Railway",
+    "cta.button.documentation": "Leer Documentación",
+  
+    "footer.links.features": "Características",
+    "footer.links.how_it_works": "Cómo Funciona",
+    "footer.links.github": "GitHub",
+    "footer.links.get_started": "Comenzar",
+  
+    "footer.copyright": "© 2025 OpenChat. Todos los derechos reservados. Mensajería segura de código abierto para todos.",
+  
+    "railway.title": "Guía de Despliegue de Plantillas de Railway",
+    "railway.subtitle": "¡Lance su propio OpenChat sin perder la cordura! No se preocupe si nunca ha desplegado nada más elegante que un tweet – esta guía lo convertirá en un mago del despliegue más rápido de lo que puede decir \"¿dónde está el botón de deshacer?\"",
+    
+    "railway.step1.title": "Regístrese en Railway",
+    "railway.step1.intro": "Primero, necesitará crear una cuenta en Railway:",
+    "railway.step1.list.item1": "Haga clic en el botón \"Deploy on Railway\" en la parte inferior de esta guía.",
+    "railway.step1.list.item2": "En la página de Railway, haga clic en \"Sign Up\" en la esquina superior derecha.",
+    "railway.step1.list.item3": "Seleccione \"Continue with Email\" de las opciones.",
+    "railway.step1.list.item4": "Luego haga clic en \"Continue with Google\" para registrarse con su cuenta de Google.",
+    "railway.step1.list.item5": "Complete el proceso de autenticación de Google.",
+    "railway.step1.joke": "¿Por qué el desarrollador se quedó sin dinero? ¡Porque utilizó todo su caché! No se preocupe, Railway tiene mucho caché para su aplicación.",
+    "railway.step1.note": "<strong>Nota:</strong> Railway requiere una cuenta para desplegar plantillas. Usar Google es la forma más rápida de comenzar, a menos que todavía esté usando palomas mensajeras para el correo electrónico.",
+  
+    "railway.step2.title": "Despliegue la Plantilla",
+    "railway.step2.intro": "Después de iniciar sesión, será dirigido a la página de despliegue de la plantilla:",
+    "railway.step2.list.item1": "Revise los detalles de la plantilla y las opciones de configuración.",
+    "railway.step2.list.item2": "Haga clic en el botón \"Deploy\" para iniciar el proceso de despliegue.",
+    "railway.step2.list.item3": "Railway ahora le solicitará que cree un nuevo proyecto utilizando esta plantilla.",
+    "railway.step2.list.item4": "La configuración predeterminada suele ser suficiente para la mayoría de los usuarios.",
+    "railway.step2.joke": "Le dije a mi computadora que necesitaba un descanso del despliegue. Me preguntó si había intentado apagarme y encenderme de nuevo. ¡Humor clásico de TI!",
+    "railway.step2.note": "<strong>Consejo:</strong> Si necesita personalizar variables de entorno u otras configuraciones, puede hacerlo antes de desplegar. Solo no nombre sus variables como sus mascotas – hace que la depuración sea incómoda.",
+  
+    "railway.step3.title": "Espere a que se Complete el Despliegue",
+    "railway.step3.intro": "Railway ahora inicializará y desplegará su proyecto:",
+    "railway.step3.list.item1": "Verá un indicador de progreso que muestra el estado del despliegue.",
+    "railway.step3.list.item2": "El sistema aprovisionará recursos, instalará dependencias y construirá su aplicación.",
+    "railway.step3.list.item3": "Este proceso generalmente toma de 2 a 5 minutos para completarse.",
+    "railway.step3.list.item4": "Verá una marca de verificación verde ✓ cuando el despliegue sea exitoso.",
+    "railway.step3.joke": "Las barras de progreso de despliegue son como la comida en microondas – pasan por el 90% en segundos, ¡y luego pasan una eternidad en ese último 10%! Hora de tomar un café.",
+    "railway.step3.note": "<strong>Importante:</strong> No cierre la pestaña del navegador durante el despliegue. El proceso continuará en segundo plano, pero sus niveles de ansiedad podrían aumentar en un 200%.",
+  
+    "railway.step4.title": "Encuentre su URL de Despliegue",
+    "railway.step4.intro": "Una vez completado el despliegue, puede acceder a su aplicación:",
+    "railway.step4.list.item1": "Busque la sección \"Deployments\" en el panel de control de su proyecto.",
+    "railway.step4.list.item2": "Encuentre el despliegue exitoso más reciente.",
+    "railway.step4.list.item3": "Haga clic en el despliegue para ver los detalles.",
+    "railway.step4.list.item4": "Busque la sección \"Domains\" para encontrar la URL de su aplicación.",
+    "railway.step4.list.item5": "La URL se verá así: https://nombre-de-su-proyecto.railway.app",
+    "railway.step4.joke": "Su nueva URL es como la primera dirección de su aplicación. ¡Envíe una invitación virtual de inauguración a todos sus amigos desarrolladores!",
+    "railway.step4.note": "<strong>Éxito:</strong> ¡Su aplicación ahora está en vivo! Puede compartir esta URL con otros para acceder a su proyecto desplegado. Siéntase libre de hacer un baile de victoria – no lo juzgaremos.",
+  
+    "railway.step5.title": "Monitoree y Administre su Proyecto",
+    "railway.step5.intro": "Railway proporciona herramientas para monitorear y administrar su despliegue:",
+    "railway.step5.list.item1": "Use la pestaña \"Metrics\" para ver el uso de recursos y el rendimiento.",
+    "railway.step5.list.item2": "Revise la sección \"Logs\" para solucionar problemas.",
+    "railway.step5.list.item3": "Puede realizar cambios en la configuración de su proyecto en la sección \"Variables\".",
+    "railway.step5.list.item4": "Para configuraciones avanzadas, explore la pestaña \"Settings\".",
+    "railway.step5.joke": "Mirar fijamente los registros de despliegue es la versión de un ingeniero de software de ver programas de telerrealidad. \"¡Oh no! ¡Mira ese error! ¡No puedo creer que haya hecho eso!\"",
+    "railway.step5.note": "<strong>Nota:</strong> Railway ofrece un generoso nivel gratuito, pero es posible que deba actualizar para proyectos con altos requisitos de recursos. Su aplicación es como un adolescente en crecimiento – podría necesitar más recursos de los que pensó inicialmente.",
+  
+    "railway.deploy_button": "Desplegar en Railway"
+  }
+  

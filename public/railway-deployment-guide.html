@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Deployment Guide</title>
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --accent-color: #6366f1;
+            --text-primary: #f8f8f8;
+            --text-secondary: #a0a0a0;
+            --success-color: #10b981;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, var(--accent-color), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .language-selector {
+            margin-top: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        select#language-selector {
+            padding: 8px 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+        }
+        
+        select#language-selector:hover {
+            border-color: #999;
+        }
+        
+        select#language-selector:focus {
+            outline: none;
+            border-color: #555;
+        }
+        
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+        
+        .step {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+        .step:nth-child(4) { animation-delay: 0.8s; }
+        .step:nth-child(5) { animation-delay: 1s; }
+        
+        .step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            position: absolute;
+            top: -20px;
+            left: 30px;
+        }
+        
+        .step h2 {
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            padding-top: 10px;
+        }
+        
+        .step p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+        
+        .step img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        ol {
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        .joke {
+            background-color: rgba(75, 85, 99, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 16px 0;
+            font-style: italic;
+            color: var(--text-primary);
+            position: relative;
+        }
+        
+        .joke::before {
+            content: '😂';
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            font-size: 24px;
+        }
+        
+        .alert {
+            background-color: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .railway-button {
+            background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .railway-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+        }
+        
+        .railway-button:active {
+            transform: translateY(0);
+        }
+        
+        .success-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--success-color);
+            position: relative;
+        }
+        
+        .success-icon::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 6px;
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(-45deg);
+            top: 8px;
+            left: 6px;
+        }
+        
+        .lang-content {
+            display: block;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .step {
+                padding: 24px;
+            }
+            
+            .language-selector {
+                flex-wrap: wrap;
+            }
+        }
+        
+        /* Adjusted Styling for Donate Banner */
+        .support-banner {
+            background-color: rgba(99, 102, 241, 0.08);
+            border-radius: 8px;
+            margin: 10px auto 30px; /* Adjusted margin for better positioning */
+            padding: 10px 20px; /* Reduced padding for a more compact banner */
+            max-width: 1100px;
+        }
+        
+        .support-content {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Reduced gap between icon and text */
+            flex-wrap: wrap;
+        }
+        strong{
+            color:red;
+        }
+
+        .support-icon {
+            background-color: var(--accent-color);
+            color: white;
+            width: 40px; /* Reduced icon size */
+            height: 40px; /* Reduced icon size */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .warning png{
+            width: 30px;
+        }
+        
+        .support-icon svg {
+            width: 20px; /* Reduced icon size */
+            height: 20px; /* Reduced icon size */
+        }
+        
+        .support-text h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1rem; /* Adjusted font size */
+        }
+        
+        .support-text p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="main-title" data-i18n="railway.title">Railway Template Deployment Guide</h1>
+            <p class="subtitle" id="subtitle" data-i18n="railway.subtitle">Launch your own OpenChat without losing your sanity! Don't worry if you've never deployed anything fancier than a tweet – this guide will turn you into a deployment wizard faster than you can say "where's the undo button?"</p>
+            
+            <div class="language-selector">
+                <select id="language-selector">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="yi">Yiddish</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="ua">Ukrainian</option>
+                </select>
+            </div>
+        </header>
+        
+        <div class="step-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h2 data-i18n="railway.step1.title">Sign Up for Railway</h2>
+                <p data-i18n="railway.step1.intro">First, you'll need to create an account on Railway:</p>
+                <ol>
+                    <li data-i18n="railway.step1.list.item1">Click the <span class="highlight">"Deploy on Railway"</span> button at the bottom of this guide.</li>
+                    <li data-i18n="railway.step1.list.item2">On the Railway page, click <span class="highlight">"Sign Up"</span> in the top right corner.</li>
+                    <li data-i18n="railway.step1.list.item3">Select <span class="highlight">"Continue with Email"</span> from the options.</li>
+                </ol>
+                <div class="joke" data-i18n="railway.step1.joke">
+                    Why did the developer go broke? Because they used up all their cache! Don't worry, Railway has plenty of cache for your app.
+                </div>
+                <div class="alert">
+                    <p data-i18n="railway.step1.note"><strong>Note:</strong> Railway requires an account to deploy templates. Using Google is the quickest way to get started, unless you're still using carrier pigeons for email.</p>
+                </div>
+                <div class="warning" style="color: red;">
+                    <img src="warning.png" alt="Warning Sign" style="width: 100px; height: 100px; display: block; margin: 0 auto;">
+                    <p><strong>Warning:</strong> You must connect with GitHub for the deployment process to work.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h2 data-i18n="railway.step2.title">Deploy the Template</h2>
+                <p data-i18n="railway.step2.intro">After signing in, you'll be directed to the template deployment page:</p>
+                <ol>
+                    <li data-i18n="railway.step2.list.item1">Review the template details and configuration options.</li>
+                    <li data-i18n="railway.step2.list.item2">Click the <span class="highlight">"Deploy"</span> button to start the deployment process.</li>
+                    <li data-i18n="railway.step2.list.item3">Railway will now prompt you to create a new project using this template.</li>
+                    <li data-i18n="railway.step2.list.item4">The default settings are usually sufficient for most users.</li>
+                </ol>
+                <div class="joke" data-i18n="railway.step2.joke">
+                    I told my computer I needed a deployment break. It asked if I tried turning myself off and on again. Classic IT humor!
+                </div>
+                <div class="alert">
+                    <p data-i18n="railway.step2.note"><strong>Tip:</strong> If you need to customize environment variables or other settings, you can do so before deploying. Just don't name your variables after your pets – it makes debugging awkward.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h2 data-i18n="railway.step3.title">Wait for Deployment to Complete</h2>
+                <p data-i18n="railway.step3.intro">Railway will now initialize and deploy your project:</p>
+                <ol>
+                    <li data-i18n="railway.step3.list.item1">You'll see a progress indicator showing the deployment status.</li>
+                    <li data-i18n="railway.step3.list.item2">The system will provision resources, install dependencies, and build your application.</li>
+                    <li data-i18n="railway.step3.list.item3">This process typically takes 2-5 minutes to complete.</li>
+                    <li data-i18n="railway.step3.list.item4">You'll see a green checkmark ✓ when deployment is successful.</li>
+                </ol>
+                <div class="joke" data-i18n="railway.step3.joke">
+                    Deployment progress bars are like microwaved food – they race through 90% in seconds, then spend an eternity on that last 10%. Time to grab a coffee!
+                </div>
+                <div class="alert">
+                    <p data-i18n="railway.step3.note"><strong>Important:</strong> Do not close the browser tab during deployment. The process will continue in the background, but your anxiety levels might increase by 200%.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h2 data-i18n="railway.step4.title">Find Your Deployment URL</h2>
+                <p data-i18n="railway.step4.intro">Once deployment is complete, you can access your application:</p>
+                <ol>
+                    <li data-i18n="railway.step4.list.item1">Look for the <span class="highlight">"Deployments"</span> section in your project dashboard.</li>
+                    <li data-i18n="railway.step4.list.item2">Find the most recent successful deployment.</li>
+                    <li data-i18n="railway.step4.list.item3">Click on the deployment to view details.</li>
+                    <li data-i18n="railway.step4.list.item4">Look for the <span class="highlight">"Domains"</span> section to find your application URL.</li>
+                    <li data-i18n="railway.step4.list.item5">The URL will look like: <span class="highlight">https://your-project-name.railway.app</span></li>
+                </ol>
+                <div class="joke" data-i18n="railway.step4.joke">
+                    Your new URL is like your app's first home address. Send a virtual housewarming party invite to all your developer friends!
+                </div>
+                <div class="alert">
+                    <p data-i18n="railway.step4.note"><strong>Success:</strong> Your application is now live! You can share this URL with others to access your deployed project. Feel free to do a victory dance – we won't judge.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <h2 data-i18n="railway.step5.title">Monitor and Manage Your Project</h2>
+                <p data-i18n="railway.step5.intro">Railway provides tools to monitor and manage your deployment:</p>
+                <ol>
+                    <li data-i18n="railway.step5.list.item1">Use the <span class="highlight">"Metrics"</span> tab to view resource usage and performance.</li>
+                    <li data-i18n="railway.step5.list.item2">Check the <span class="highlight">"Logs"</span> section to troubleshoot any issues.</li>
+                    <li data-i18n="railway.step5.list.item3">You can make changes to your project configuration in the <span class="highlight">"Variables"</span> section.</li>
+                    <li data-i18n="railway.step5.list.item4">For advanced settings, explore the <span class="highlight">"Settings"</span> tab.</li>
+                </ol>
+                <div class="joke" data-i18n="railway.step5.joke">
+                    Staring at deployment logs is the software engineer's version of watching reality TV. "Oh no! Look at that error! I can't believe it did that!"
+                </div>
+                <div class="alert">
+                    <p data-i18n="railway.step5.note"><strong>Note:</strong> Railway offers a generous free tier, but you may need to upgrade for projects with high resource requirements. Your app is like a growing teenager – it might need more resources than you initially thought.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <a href="https://railway.com/new/template/6zTNV1" target="_blank" class="railway-button">
+                <span data-i18n="railway.deploy_button">Deploy on Railway</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="support-banner">
+        <div class="container">
+            <div class="support-content">
+                <div class="support-icon">
+                    <svg>...</svg>
+                </div>
+                <div class="support-text">
+                    <h3>Support Us</h3>
+                    <p>Help us continue providing valuable content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+        const translationManager = new TranslationManager();
+        await translationManager.init();
+        
+        const languageSelector = document.getElementById('language-selector');
+        if (languageSelector) {
+            languageSelector.addEventListener('change', function() {
+                translationManager.changeLanguage(this.value);
+            });
+            
+            languageSelector.value = translationManager.currentLanguage;
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        const steps = document.querySelectorAll('.step');
+        steps.forEach(step => {
+            step.style.animationPlayState = 'paused';
+            observer.observe(step);
+        });
+        
+        console.log('TranslationManager initialized');
+        console.log('Current language:', translationManager.currentLanguage);
+        console.log('Railway title translation:', translationManager.getNestedTranslation('railway.title'));
+    });
+    </script>
+</body>
+</html>
+                            

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenChat Documentation</title>
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --accent: #5c6bc0;
+            --accent-light: #7986cb;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --card-bg: #2d2d2d;
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            background-color: var(--bg-secondary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.1;
+            background: linear-gradient(45deg, var(--accent) 0%, transparent 70%);
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(90deg, var(--text-primary), var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .architecture-img {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards 0.3s;
+        }
+        
+        code {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        a {
+            color: var(--accent-light);
+            text-decoration: none;
+            position: relative;
+        }
+        
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent-light);
+            transition: width 0.3s ease;
+        }
+        
+        a:hover::after {
+            width: 100%;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 1rem;
+            box-shadow: 0 5px 15px rgba(92, 107, 192, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(92, 107, 192, 0.6);
+        }
+        
+        .btn::after {
+            display: none;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card h3 {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+        }
+        
+        .feature-icon {
+            margin-right: 0.5rem;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent);
+            border-radius: 50%;
+            padding: 5px;
+        }
+        
+        footer {
+            background-color: var(--bg-secondary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .github-section {
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+            background-color: var(--card-bg);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .github-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .github-link svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-primary);
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Staggered animation for feature cards */
+        .feature-card:nth-child(1) { animation: fadeUp 0.6s ease forwards 0.3s; }
+        .feature-card:nth-child(2) { animation: fadeUp 0.6s ease forwards 0.5s; }
+        .feature-card:nth-child(3) { animation: fadeUp 0.6s ease forwards 0.7s; }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-bg"></div>
+        <h1>OpenChat</h1>
+        <p>A secure, decentralized messaging platform</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>How OpenChat Works</h2>
+            <div class="card">
+                <p>OpenChat is designed as a decentralized messaging application that puts security and privacy first. It leverages a distributed architecture to ensure that your messages are only accessible to you and your intended recipients.</p>
+                
+                <img src="explanation.png" alt="OpenChat Architecture Diagram" class="architecture-img">
+                <p><em>Figure: Explanation of OpenChat's decentralized architecture</em></p>
+                
+                <p>The diagram above illustrates how OpenChat facilitates secure communication between users while maintaining complete decentralization. Messages are encrypted end-to-end and never stored on central servers, ensuring your conversations remain private and secure.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>
+                        <span class="feature-icon">🔒</span>
+                        End-to-End Encryption
+                    </h3>
+                    <p>All messages are encrypted using state-of-the-art cryptographic algorithms, ensuring that only the intended recipients can decode and read the content.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>
+                        <span class="feature-icon">🌐</span>
+                        Decentralized Architecture
+                    </h3>
+                    <p>OpenChat operates on a peer-to-peer network without relying on central servers for message routing, making censorship and surveillance significantly more difficult.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>
+                        <span class="feature-icon">📂</span>
+                        Secure File Sharing
+                    </h3>
+                    <p>Share files of any size securely with other users through our BackBlaze integration, maintaining the same level of encryption and privacy as your messages.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Secure File Sharing with BackBlaze</h2>
+            <div class="card">
+                <h3>How File Sharing Works</h3>
+                <p>OpenChat uses BackBlaze B2 Cloud Storage as a secure file storage solution. Here's how the process works:</p>
+                
+                <ol>
+                    <li>When you share a file, it's first encrypted on your device using the same encryption keys used for your message content.</li>
+                    <li>The encrypted file is then uploaded to a private BackBlaze bucket dedicated to your conversation.</li>
+                    <li>A secure access token is generated and shared with your recipient through the encrypted message channel.</li>
+                    <li>The recipient can access and download the file using this token, which is valid only for a limited time.</li>
+                    <li>Once downloaded, the file is decrypted locally on the recipient's device.</li>
+                </ol>
+                
+                <h3>Security Features</h3>
+                <p>Our BackBlaze integration includes several security measures:</p>
+                <ul>
+                    <li>Client-side encryption ensures files are encrypted before leaving your device</li>
+                    <li>Time-limited access tokens prevent unauthorized access</li>
+                    <li>Automatic file expiration options for sensitive content</li>
+                    <li>No metadata storage in central databases</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Quick Deployment with Railway</h2>
+            <div class="card">
+                <p>Getting your own instance of OpenChat up and running is simple with our Railway template. Railway is a modern platform for deploying applications with minimal configuration.</p>
+                
+                <h3>One-Click Deployment</h3>
+                <p>Deploy your own OpenChat instance with a single click:</p>
+                <a href="railway-deployment-guide.html" class="btn">Deploy on Railway</a>
+                
+                <h3>Configuration Options</h3>
+                <p>The Railway template comes pre-configured with sensible defaults, but you can customize various aspects:</p>
+                <ul>
+                    <li>Connection pool size and timeout settings</li>
+                    <li>Storage options and retention policies</li>
+                    <li>Authentication methods and security parameters</li>
+                    <li>BackBlaze integration settings</li>
+                </ul>
+                
+                <h3>Deployment Steps</h3>
+                <ol>
+                    <li>Click the "Deploy on Railway" button above</li>
+                    <li>Sign in to your Railway account (or create one)</li>
+                    <li>Configure your environment variables (API keys, etc.)</li>
+                    <li>Click deploy and wait for the build to complete</li>
+                    <li>Access your new OpenChat instance via the provided URL</li>
+                </ol>
+            </div>
+        </section>
+        
+        <div class="github-section">
+            <a href="https://github.com/rpi10/openchatv2" class="github-link" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Check out the GitHub repository
+            </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>OpenChat - Secure, Decentralized Messaging</p>
+        <p><a href="https://github.com/rpi10/openchatv2">github.com/rpi10/openchatv2</a></p>
+    </footer>
+    
+    <script>
+        // Simple animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

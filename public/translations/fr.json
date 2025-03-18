@@ -1,0 +1,112 @@
+{
+    "nav.features": "Fonctionnalités",
+    "nav.how_it_works": "Comment ça marche",
+    "nav.new_features": "Nouvelles fonctionnalités",
+    "nav.support": "Soutenez-nous",
+    "nav.get_started": "Commencer",
+    
+    "hero.title": "Discuter en toute sécurité, sans compromis",
+    "hero.description": "OpenChat est une messagerie ultra-sécurisée avec chiffrement de bout en bout. Pas besoin de numéro de téléphone, pas de serveur centralisé, et bien sûr, open source. Bref, un rêve pour les paranoïaques de la vie privée.",
+    "hero.button.get_started": "Commencer",
+    "hero.button.learn_more": "En savoir plus",
+    
+    "features.section_title": "Pourquoi choisir OpenChat ?",
+    "features.section_description": "Dites adieu aux espions et bonjour à la liberté ! Voici pourquoi OpenChat est l’avenir de la messagerie sécurisée.",
+    
+    "features.e2ee.title": "Chiffrement de bout en bout",
+    "features.e2ee.description": "Chaque message est chiffré comme un secret d’État, sauf qu’ici, même nous, on ne peut pas le lire.",
+    
+    "features.no_phone.title": "Pas de numéro de téléphone requis",
+    "features.no_phone.description": "Votre numéro de téléphone, c’est votre affaire. OpenChat ne le demande pas. Simple, efficace, anonyme.",
+    
+    "features.decentralized.title": "Architecture décentralisée",
+    "features.decentralized.description": "Pas de grand serveur à pirater ni de point de chute unique. Nos serveurs, c’est tout le monde !",
+    
+    "features.open_source.title": "Open Source",
+    "features.open_source.description": "Tout est transparent, sans tricherie ni portes dérobées. Oui, même vous pouvez vérifier le code !",
+    
+    "features.european.title": "100% Européen",
+    "features.european.description": "Fait en Europe, avec amour et respect du RGPD. Pas de surveillance made in Silicon Valley ici !",
+    
+    "how_it_works.section_title": "Comment fonctionne OpenChat ?",
+    "how_it_works.section_description": "Plongez dans les coulisses d’OpenChat et découvrez pourquoi c’est à la fois magique et ultra-sécurisé.",
+    
+    "how_it_works.step1.title": "Réseau de bases de données décentralisé",
+    "how_it_works.step1.description": "Au lieu d’un serveur unique, OpenChat fonctionne comme un essaim d’abeilles numériques, chacune portant une partie des données (en chiffré, évidemment).",
+    
+    "how_it_works.step2.title": "Chiffrement de bout en bout",
+    "how_it_works.step2.description": "Un espion intercepte vos messages ? Félicitations, il vient de recevoir un tas de caractères illisibles !",
+    
+    "how_it_works.step3.title": "Identité sans numéro de téléphone",
+    "how_it_works.step3.description": "Chez nous, pas de numéros de téléphone. Juste des clés cryptographiques et un brin de magie numérique.",
+    
+    "how_it_works.step4.title": "Développement Open Source",
+    "how_it_works.step4.description": "Tout est ouvert : vous pouvez voir le code, l’améliorer ou simplement vous assurer qu’on ne fait pas n’importe quoi.",
+    
+    "cta.section_title": "Prêt à vous lancer ?",
+    "cta.section_description": "Rejoignez la révolution de la messagerie sécurisée. Installez OpenChat ou explorez comment ça marche !",
+    "cta.button.deploy": "Déployer avec Railway",
+    "cta.button.documentation": "Lire la documentation",
+    
+    "footer.links.features": "Fonctionnalités",
+    "footer.links.how_it_works": "Comment ça marche",
+    "footer.links.github": "GitHub",
+    "footer.links.get_started": "Commencer",
+    
+    "footer.copyright": "© 2025 OpenChat. Tous droits réservés. La messagerie open source pour tous.",
+    
+    "support.title": "Soutenez OpenChat",
+    "support.description": "OpenChat est un projet communautaire qui repose sur des soutiens comme vous. Vos dons nous aident à maintenir les serveurs, développer de nouvelles fonctionnalités et garantir des conversations privées et sécurisées.",
+    "support.button": "Faire un don",
+    
+    "railway.title": "Guide de Déploiement des Modèles Railway",
+    "railway.subtitle": "Lancez votre propre OpenChat sans perdre la raison ! Ne vous inquiétez pas si vous n'avez jamais déployé plus sophistiqué qu'un tweet – ce guide fera de vous un magicien du déploiement plus vite que vous ne pouvez dire \"où est le bouton d'annulation ?\"",
+    
+    "railway.step1.title": "Inscrivez-vous sur Railway",
+    "railway.step1.description": "Tout d'abord, vous devez créer un compte sur GitHub :",
+    "railway.step1.list.item1": "Assurez-vous d'avoir un compte GitHub. Sinon, vous pouvez <a href='https://github.com/join' target='_blank'>en créer un ici</a>.",
+    "railway.step1.list.item2": "Cliquez sur le bouton \"Deploy on Railway\" en bas de ce guide.",
+    "railway.step1.list.item3": "Sur la page Railway, cliquez sur \"Continue with GitHub\" au centre de la page.",
+    "railway.step1.joke": "Pourquoi le développeur est-il tombé en panne d'argent ? Parce qu'il a épuisé tout son cache ! Ne vous inquiétez pas, Railway dispose de beaucoup de cache pour votre application.",
+    "railway.step1.note": "<strong>Remarque :</strong> Railway nécessite un compte pour déployer des modèles. L'utilisation de GitHub est la méthode recommandée pour commencer.",
+    "railway.step1.warning": "Attention : Vous devez vous connecter avec GitHub pour que le processus de déploiement fonctionne.",
+    
+    "railway.step2.title": "Déployez le Modèle",
+    "railway.step2.intro": "Après vous être connecté, vous serez dirigé vers la page de déploiement du modèle :",
+    "railway.step2.list.item1": "Examinez les détails du modèle et les options de configuration.",
+    "railway.step2.list.item2": "Cliquez sur le bouton \"Deploy\" pour démarrer le processus de déploiement.",
+    "railway.step2.list.item3": "Railway vous demandera maintenant de créer un nouveau projet en utilisant ce modèle.",
+    "railway.step2.list.item4": "Les paramètres par défaut sont généralement suffisants pour la plupart des utilisateurs.",
+    "railway.step2.joke": "J'ai dit à mon ordinateur que j'avais besoin d'une pause déploiement. Il m'a demandé si j'avais essayé de m'éteindre et de me rallumer. Humour informatique classique !",
+    "railway.step2.note": "<strong>Conseil :</strong> Si vous devez personnaliser des variables d'environnement ou d'autres paramètres, vous pouvez le faire avant le déploiement. Évitez simplement de nommer vos variables d'après vos animaux de compagnie – cela rend le débogage gênant.",
+    
+    "railway.step3.title": "Attendez que le Déploiement soit Terminé",
+    "railway.step3.intro": "Railway va maintenant initialiser et déployer votre projet :",
+    "railway.step3.list.item1": "Vous verrez un indicateur de progression montrant l'état du déploiement.",
+    "railway.step3.list.item2": "Le système allouera des ressources, installera des dépendances et construira votre application.",
+    "railway.step3.list.item3": "Ce processus prend généralement 2 à 5 minutes.",
+    "railway.step3.list.item4": "Vous verrez une coche verte ✓ lorsque le déploiement réussit.",
+    "railway.step3.joke": "Les barres de progression de déploiement sont comme la nourriture au micro-ondes – elles passent à 90% en quelques secondes, puis passent une éternité sur les 10% restants. C'est le moment de prendre un café !",
+    "railway.step3.note": "<strong>Important :</strong> Ne fermez pas l'onglet du navigateur pendant le déploiement. Le processus continuera en arrière-plan, mais votre niveau d'anxiété pourrait augmenter de 200%.",
+    
+    "railway.step4.title": "Trouvez votre URL de Déploiement",
+    "railway.step4.intro": "Une fois le déploiement terminé, vous pouvez accéder à votre application :",
+    "railway.step4.list.item1": "Recherchez la section \"Deployments\" dans le tableau de bord de votre projet.",
+    "railway.step4.list.item2": "Trouvez le déploiement réussi le plus récent.",
+    "railway.step4.list.item3": "Cliquez sur le déploiement pour voir les détails.",
+    "railway.step4.list.item4": "Recherchez la section \"Domains\" pour trouver l'URL de votre application.",
+    "railway.step4.list.item5": "L'URL ressemblera à : https://votre-nom-de-projet.railway.app",
+    "railway.step4.joke": "Votre nouvelle URL est comme la première adresse de votre application. Envoyez une invitation virtuelle de pendaison de crémaillère à tous vos amis développeurs !",
+    "railway.step4.note": "<strong>Succès :</strong> Votre application est maintenant en ligne ! Vous pouvez partager cette URL avec d'autres pour accéder à votre projet déployé. N'hésitez pas à faire une danse de la victoire – nous ne jugerons pas.",
+    
+    "railway.step5.title": "Surveillez et Gérez Votre Projet",
+    "railway.step5.intro": "Railway fournit des outils pour surveiller et gérer votre déploiement :",
+    "railway.step5.list.item1": "Utilisez l'onglet \"Metrics\" pour voir l'utilisation des ressources et les performances.",
+    "railway.step5.list.item2": "Consultez la section \"Logs\" pour résoudre les problèmes.",
+    "railway.step5.list.item3": "Vous pouvez apporter des modifications à la configuration de votre projet dans la section \"Variables\".",
+    "railway.step5.list.item4": "Pour les paramètres avancés, explorez l'onglet \"Settings\".",
+    "railway.step5.joke": "Fixer les logs de déploiement est la version téléréalité des ingénieurs logiciels. \"J'ai dit à mon ordinateur que j'avais besoin d'une pause déploiement. Il m'a demandé si j'avais essayé de m'éteindre et de me rallumer. Humour informatique classique !\"",
+    "railway.step5.note": "<strong>Remarque :</strong> Railway offre un niveau gratuit généreux, mais vous devrez peut-être passer à un niveau supérieur pour les projets à fortes exigences en ressources. Votre application est comme un adolescent en pleine croissance – elle pourrait avoir besoin de plus de ressources que vous ne le pensiez initialement.",
+    
+    "railway.deploy_button": "Déployer sur Railway"
+}

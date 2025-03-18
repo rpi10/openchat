@@ -1,0 +1,108 @@
+{
+  "nav.features": "Funktionen",
+  "nav.how_it_works": "Wie es funktioniert",
+  "nav.get_started": "Loslegen",
+  
+  "hero.title": "Sicherer Chat ohne Kompromisse",
+  "hero.description": "OpenChat ist eine sichere, Ende-zu-Ende-verschlüsselte Messaging-Plattform, die Privatsphäre in den Vordergrund stellt. Keine Telefonnummer erforderlich, dezentral konzipiert und vollständig quelloffen.",
+  "hero.button.get_started": "Loslegen",
+  "hero.button.learn_more": "Mehr erfahren",
+  
+  "features.section_title": "Warum OpenChat wählen?",
+  "features.section_description": "Erleben Sie die Zukunft des sicheren Messaging mit Funktionen, die Ihre Privatsphäre schützen und Ihre Kommunikation verbessern.",
+  
+  "features.e2ee.title": "Ende-zu-Ende-Verschlüsselung",
+  "features.e2ee.description": "Alle Nachrichten werden mit modernsten E2EE-Protokollen verschlüsselt, sodass nur Sie und Ihr Empfänger sie lesen können.",
+  
+  "features.no_phone.title": "Keine Telefonnummer erforderlich",
+  "features.no_phone.description": "Melden Sie sich an, ohne Ihre Telefonnummer preiszugeben, bewahren Sie Ihre Privatsphäre und machen Sie es für jeden zugänglich.",
+  
+  "features.decentralized.title": "Dezentrale Architektur",
+  "features.decentralized.description": "Basierend auf miteinander verbundenen Datenbanken, die von Benutzern in der Cloud gehostet werden, entsteht ein widerstandsfähiges Netzwerk, das nicht leicht abgeschaltet werden kann.",
+  
+  "features.open_source.title": "Open Source",
+  "features.open_source.description": "Vollständig transparenter Code, den jeder inspizieren, modifizieren und zu dem jeder beitragen kann, um sicherzustellen, dass es keine versteckten Hintertüren gibt.",
+  
+  "features.european.title": "Europäisches Design",
+  "features.european.description": "OpenChat ist zu 100 % europäisch. Aufgebaut mit europäischen Datenschutzwerten im Kern. OpenChat entspricht der DSGVO und stellt die Souveränität der Nutzer an erste Stelle — keine Überwachung aus dem Silicon Valley!",
+  
+  "how_it_works.section_title": "Wie OpenChat funktioniert",
+  "how_it_works.section_description": "Verstehen Sie die Technologie hinter OpenChats sicherer und dezentraler Messaging-Plattform.",
+  
+  "how_it_works.step1.title": "Dezentrales Datenbanknetzwerk",
+  "how_it_works.step1.description": "OpenChat verbindet verteilte Datenbanken, die von Benutzern in der Cloud gehostet werden. Im Gegensatz zu herkömmlichen Messaging-Apps, die auf zentralisierte Server angewiesen sind, schafft OpenChat ein Netzwerk miteinander verbundener Knoten, von denen jeder verschlüsselte Daten speichert. Das bedeutet, dass es keinen einzigen Ausfallpunkt und keine zentrale Autorität gibt, die Ihre Gespräche überwacht.",
+  
+  "how_it_works.step2.title": "Ende-zu-Ende-Verschlüsselung",
+  "how_it_works.step2.description": "Alle über OpenChat gesendeten Nachrichten werden auf Ihrem Gerät verschlüsselt, bevor sie es verlassen, und können nur vom vorgesehenen Empfänger entschlüsselt werden. Selbst wenn jemand die Daten während der Übertragung abfängt oder auf die Datenbanken zugreift, in denen die Nachrichten gespeichert sind, sieht er nur verschlüsselte Daten, die ohne die richtigen Schlüssel unmöglich zu lesen sind.",
+  
+  "how_it_works.step3.title": "Identität ohne Telefonnummern",
+  "how_it_works.step3.description": "Im Gegensatz zu anderen Messaging-Apps benötigt OpenChat keine Telefonnummer, um ein Konto zu erstellen. Dies schützt Ihre Privatsphäre und macht den Dienst für jeden mit Internetverbindung zugänglich, unabhängig davon, ob er ein Mobiltelefon besitzt oder nicht. Benutzer können stattdessen sichere Identitäten mit kryptografischen Schlüsseln erstellen.",
+  
+  "how_it_works.step4.title": "Open-Source-Entwicklung",
+  "how_it_works.step4.description": "Der Code von OpenChat ist vollständig quelloffen, was bedeutet, dass jeder ihn überprüfen, seine Sicherheit verifizieren und Verbesserungen beitragen kann. Dieser kollaborative Ansatz stellt sicher, dass die Plattform sicher, aktuell und frei von versteckten Schwachstellen oder Hintertüren bleibt.",
+  
+  "cta.section_title": "Bereit loszulegen?",
+  "cta.section_description": "Schließen Sie sich noch heute der sicheren Messaging-Revolution an. Stellen Sie Ihre eigene OpenChat-Instanz bereit oder erfahren Sie mehr darüber, wie es funktioniert.",
+  "cta.button.deploy": "Mit Railway bereitstellen",
+  "cta.button.documentation": "Dokumentation lesen",
+  
+  "footer.links.features": "Funktionen",
+  "footer.links.how_it_works": "Wie es funktioniert",
+  "footer.links.github": "GitHub",
+  "footer.links.get_started": "Loslegen",
+  
+  "footer.copyright": "© 2025 OpenChat. Alle Rechte vorbehalten. Open-Source-Secure-Messaging für alle.",
+  
+  "railway.title": "Railway Vorlagenbereitstellungsleitfaden",
+  "railway.subtitle": "Starten Sie Ihren eigenen OpenChat, ohne den Verstand zu verlieren! Keine Sorge, wenn Sie noch nie etwas Ausgefalleneres als einen Tweet bereitgestellt haben – dieser Leitfaden macht Sie schneller zu einem Bereitstellungszauberer, als Sie \"Wo ist die Rückgängig-Taste?\" sagen können.",
+  
+  "railway.step1.title": "Bei Railway Anmelden",
+  "railway.step1.intro": "Zuerst müssen Sie ein Konto bei Railway erstellen:",
+  "railway.step1.list.item1": "Klicken Sie auf die Schaltfläche \"Deploy on Railway\" am Ende dieses Leitfadens.",
+  "railway.step1.list.item2": "Klicken Sie auf der Railway-Seite auf \"Sign Up\" in der oberen rechten Ecke.",
+  "railway.step1.list.item3": "Wählen Sie \"Continue with Email\" aus den Optionen.",
+  "railway.step1.list.item4": "Klicken Sie dann auf \"Continue with Google\", um sich mit Ihrem Google-Konto anzumelden.",
+  "railway.step1.list.item5": "Schließen Sie den Google-Authentifizierungsprozess ab.",
+  "railway.step1.joke": "Warum ging dem Entwickler das Geld aus? Weil er seinen gesamten Cache aufgebraucht hat! Keine Sorge, Railway hat viel Cache für Ihre App.",
+  "railway.step1.note": "<strong>Hinweis:</strong> Railway benötigt ein Konto, um Vorlagen bereitzustellen. Die Verwendung von Google ist der schnellste Weg, um zu beginnen, es sei denn, Sie verwenden immer noch Brieftauben für E-Mails.",
+  "railway.github_signup": "Mit GitHub anmelden",
+  
+  "railway.step2.title": "Vorlage Bereitstellen",
+  "railway.step2.intro": "Nach der Anmeldung werden Sie zur Vorlagenbereitstellungsseite weitergeleitet:",
+  "railway.step2.list.item1": "Überprüfen Sie die Vorlagendetails und Konfigurationsoptionen.",
+  "railway.step2.list.item2": "Klicken Sie auf die Schaltfläche \"Deploy\", um den Bereitstellungsprozess zu starten.",
+  "railway.step2.list.item3": "Railway wird Sie nun auffordern, ein neues Projekt mit dieser Vorlage zu erstellen.",
+  "railway.step2.list.item4": "Die Standardeinstellungen sind in der Regel ausreichend für die meisten Benutzer.",
+  "railway.step2.joke": "Ich sagte meinem Computer, dass ich eine Bereitstellungspause brauchte. Er fragte, ob ich versucht hätte, mich aus- und wieder einzuschalten. Klassischer IT-Humor!",
+  "railway.step2.note": "<strong>Tipp:</strong> Wenn Sie Umgebungsvariablen oder andere Einstellungen anpassen müssen, können Sie dies vor der Bereitstellung tun. Benennen Sie Ihre Variablen nicht nach Ihren Haustieren – das macht das Debugging unangenehm.",
+  
+  "railway.step3.title": "Warten Sie, bis die Bereitstellung abgeschlossen ist",
+  "railway.step3.intro": "Railway wird nun Ihr Projekt initialisieren und bereitstellen:",
+  "railway.step3.list.item1": "Sie sehen einen Fortschrittsbalken, der den Bereitstellungsstatus anzeigt.",
+  "railway.step3.list.item2": "Das System stellt Ressourcen bereit, installiert Abhängigkeiten und erstellt Ihre Anwendung.",
+  "railway.step3.list.item3": "Dieser Vorgang dauert in der Regel 2-5 Minuten.",
+  "railway.step3.list.item4": "Sie sehen ein grünes Häkchen ✓, wenn die Bereitstellung erfolgreich ist.",
+  "railway.step3.joke": "Bereitstellungsfortschrittsbalken sind wie Mikrowellennahrung – sie rasen durch 90% in Sekunden und verbringen dann eine Ewigkeit mit den letzten 10%. Zeit, einen Kaffee zu holen!",
+  "railway.step3.note": "<strong>Wichtig:</strong> Schließen Sie den Browser-Tab während der Bereitstellung nicht. Der Prozess wird im Hintergrund fortgesetzt, aber Ihr Angstniveau könnte um 200% steigen.",
+  
+  "railway.step4.title": "Finden Sie Ihre Bereitstellungs-URL",
+  "railway.step4.intro": "Sobald die Bereitstellung abgeschlossen ist, können Sie auf Ihre Anwendung zugreifen:",
+  "railway.step4.list.item1": "Suchen Sie im Projekt-Dashboard nach dem Abschnitt \"Deployments\".",
+  "railway.step4.list.item2": "Finden Sie die neueste erfolgreiche Bereitstellung.",
+  "railway.step4.list.item3": "Klicken Sie auf die Bereitstellung, um Details anzuzeigen.",
+  "railway.step4.list.item4": "Suchen Sie im Abschnitt \"Domains\" nach der URL Ihrer Anwendung.",
+  "railway.step4.list.item5": "Die URL sieht so aus: https://ihr-projektname.railway.app",
+  "railway.step4.joke": "Ihre neue URL ist wie Ihre erste Heimatadresse Ihrer App. Senden Sie eine virtuelle Einweihungsparty-Einladung an alle Ihre Entwicklerfreunde!",
+  "railway.step4.note": "<strong>Erfolg:</strong> Ihre Anwendung ist jetzt online! Sie können diese URL mit anderen teilen, um auf Ihr bereitgestelltes Projekt zuzugreifen. Fühlen Sie sich frei, einen Siegestanz aufzuführen – wir werden nicht urteilen.",
+  
+  "railway.step5.title": "Überwachen und Verwalten Sie Ihr Projekt",
+  "railway.step5.intro": "Railway bietet Tools zum Überwachen und Verwalten Ihrer Bereitstellung:",
+  "railway.step5.list.item1": "Verwenden Sie die Registerkarte \"Metrics\", um Ressourcennutzung und Leistung anzuzeigen.",
+  "railway.step5.list.item2": "Überprüfen Sie den Abschnitt \"Logs\", um Probleme zu beheben.",
+  "railway.step5.list.item3": "Sie können Änderungen an Ihrer Projektkonfiguration im Abschnitt \"Variables\" vornehmen.",
+  "railway.step5.list.item4": "Für erweiterte Einstellungen erkunden Sie die Registerkarte \"Settings\".",
+  "railway.step5.joke": "Das Starren auf Bereitstellungsprotokolle ist die Software-Ingenieur-Version des Reality-TV-Schauens. \"Oh nein! Schau dir diesen Fehler an! Ich kann nicht glauben, dass er das getan hat!\"",
+  "railway.step5.note": "<strong>Hinweis:</strong> Railway bietet eine großzügige kostenlose Stufe, aber Sie müssen möglicherweise für Projekte mit hohen Ressourcenanforderungen upgraden. Ihre App ist wie ein heranwachsender Teenager – sie braucht möglicherweise mehr Ressourcen, als Sie ursprünglich dachten.",
+  
+  "railway.deploy_button": "Auf Railway bereitstellen"
+}
